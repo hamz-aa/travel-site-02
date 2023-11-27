@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/953afe11c5.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Travel Site</title>
+  </head>
+  <body>
+    <header>
+      <a href="#" class="brand">Travel</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Explore</a>
+          <a href="#">Gallery</a>
+          <a href="#">Contact</a>
+        </div>
+        
+    </header>
+
+    <section class="home">
+      <video
+        class="video-slide active"
+        src="./assets/vid 01.mp4"
+        autoplay
+        muted
+        loop
+      ></video>
+      <video
+        class="video-slide"
+        src="./assets/vid 02.mp4"
+        autoplay
+        muted
+        loop
+      ></video>
+      <video
+        class="video-slide"
+        src="./assets/vid 03.mp4"
+        autoplay
+        muted
+        loop
+      ></video>
+      <video
+        class="video-slide"
+        src="./assets/vid 04.mp4"
+        autoplay
+        muted
+        loop
+      ></video>
+      <video
+        class="video-slide"
+        src="./assets/vid 05.mp4"
+        autoplay
+        muted
+        loop
+      ></video>
+      <div class="content active">
+        <h1>Wonderful.<br /><span>Island</span></h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae
+          facere minima libero quae accusamus. Debitis excepturi, ullam quae
+          perspiciatis libero error tempora provident distinctio repudiandae
+          minima tempore corrupti ducimus quis, officia impedit illum,
+          aspernatur ratione quos harum ut veniam cumque! Mollitia fugiat, harum
+          aliquam distinctio explicabo dolorem doloribus itaque expedita?
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Camping.<br /><span>Enjoy</span></h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae
+          facere minima libero quae accusamus. Debitis excepturi, ullam quae
+          perspiciatis libero error tempora provident distinctio repudiandae
+          minima tempore corrupti ducimus quis, officia impedit illum,
+          aspernatur ratione quos harum ut veniam cumque! Mollitia fugiat, harum
+          aliquam distinctio explicabo dolorem doloribus itaque expedita?
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Adventures.<br /><span>Off Road</span></h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae
+          facere minima libero quae accusamus. Debitis excepturi, ullam quae
+          perspiciatis libero error tempora provident distinctio repudiandae
+          minima tempore corrupti ducimus quis, officia impedit illum,
+          aspernatur ratione quos harum ut veniam cumque! Mollitia fugiat, harum
+          aliquam distinctio explicabo dolorem doloribus itaque expedita?
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Road Trip.<br /><span>Together</span></h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae
+          facere minima libero quae accusamus. Debitis excepturi, ullam quae
+          perspiciatis libero error tempora provident distinctio repudiandae
+          minima tempore corrupti ducimus quis, officia impedit illum,
+          aspernatur ratione quos harum ut veniam cumque! Mollitia fugiat, harum
+          aliquam distinctio explicabo dolorem doloribus itaque expedita?
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Feel Nature.<br /><span>Relax</span></h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae
+          facere minima libero quae accusamus. Debitis excepturi, ullam quae
+          perspiciatis libero error tempora provident distinctio repudiandae
+          minima tempore corrupti ducimus quis, officia impedit illum,
+          aspernatur ratione quos harum ut veniam cumque! Mollitia fugiat, harum
+          aliquam distinctio explicabo dolorem doloribus itaque expedita?
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="media-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+      </div>
+    </div>
+    </section>
+
+    <script type="text/javascript">
+      // javascript of responsive navigation menu
+      const menuBtn = document.querySelector(".menu-btn");
+      const navigation = document.querySelector(".navigation");
+
+      menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+      });
+
+      // javascript for video slider navigation
+      const sliderBtn = document.querySelectorAll(".nav-btn");
+      const slides = document.querySelectorAll(".video-slide");
+      const contents = document.querySelectorAll(".content");
+
+      var sliderNav = function (manual) {
+        sliderBtn.forEach((btn) => {
+          btn.classList.remove("active");
+        });
+
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+
+        contents.forEach((content) => {
+          content.classList.remove("active");
+        });
+
+        sliderBtn[manual].classList.add("active");
+        slides[manual].classList.add("active");
+        contents[manual].classList.add("active");
+      };
+
+      sliderBtn.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          sliderNav(i);
+        });
+      });
+    </script>
+  </body>
+</html>
